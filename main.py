@@ -47,9 +47,6 @@ def main():
     db_session = get_session(engine)
     schema_dict = output_schema(db_session())
     serialize_schema(config_data.output_path, config_data.output_schema_path, schema_dict)
-    if config_data.output_image:
-        strategy_schema = schema_dict["strategy"]
-        output_image(strategy_schema, config_data.output_path, config_data.output_image_path)
     print("Done.")
 
 

@@ -6,11 +6,9 @@ import yaml
 @dataclass
 class Config:
     # dialect+driver://username:password@host:port/database
-    db_url: str = "dialect+driver://username:password@host:port/database"
+    db_url: str = "mysql+mysqlconnector://root:123456@localhost:3306/lsky"
     output_path: str = "./output"
     output_schema_path: str = "/schema"
-    output_image: bool = False
-    output_image_path: str = "/image"
 
 
 def get_config() -> tuple[Config, bool]:
@@ -27,9 +25,8 @@ def get_config() -> tuple[Config, bool]:
         default_config = Config()
         config_data = {
             "db_url": default_config.db_url,
-            "output_schema_path": default_config.output_schema_path,
-            "output_image": default_config.output_image,
-            "output_image_path": default_config.output_image_path
+            "output_path": default_config.output_path,
+            "output_schema_path": default_config.output_schema_path
         }
 
         with open(config_path, "w", encoding="utf-8") as f:
