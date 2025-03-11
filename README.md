@@ -2,6 +2,10 @@
 
 将[lsky-pro](https://github.com/lsky-org/lsky-pro)的数据库数据导出为JSON文件
 
+## Requirements
+
+- Python 3.11+
+
 ## Usage
 
 1. Clone the repository: `git clone https://gitclone.com/github.com/ShiinaKin/lsky-output.git`
